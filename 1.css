@@ -1,0 +1,101 @@
+h1{
+    color: brown;
+    font-size: 18px;
+}
+#First{                       
+    color: aqua;
+}
+h2
+{
+    top: 200px;
+    position: relative; 
+}
+/*  Chỉ định vị trí tương đối và ko phụ thuộc có thể ghi đè */
+.Second
+{
+    color: blueviolet;
+    font-size: 20px;
+}
+/* Tạo biến để thay đổi nhanh */
+:root{
+    --color: black;
+    --color2: lightblue;
+}
+.FirstH2{
+    color: var(--color);
+}
+.SecondH2{
+    color: var(--color2);
+}
+.SecondH3{
+    --color3: orange;
+    color: var(--color3);
+}
+.box{
+    width: 60px;
+    height: 60px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    float: left;                 
+    /* float: left đẩy các khổi cùng class lên hàng */
+}
+.box1
+{
+
+    background-color: aquamarine;
+    padding: 10px ;
+}
+.box2
+{
+
+    background-color: orange;
+    padding: 20px;
+    
+}
+.box3
+{
+    background-color: blue;
+    padding: 15px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: black;
+    margin:20px;
+}
+.box4
+{
+    width: 100px;
+    height: 100px;
+    background-color: blueviolet;
+    color: black;
+    padding: 20px; 
+    border: 2px solid;
+    box-sizing: border-box;
+}
+.Hover
+{
+  width: 100%;
+  height: 100px;
+  background-color: orange;
+}
+.Hover:hover
+{
+    background-color: blueviolet;
+}
+.Hover:active
+{
+    background-color: brown;
+}
+li:first-child
+{
+    color: brown;
+}
+li:last-child
+{
+    color: blue;
+}
+.BOX{
+    width: 100%;
+    height: 100px;
+    color: black;
+}

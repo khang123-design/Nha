@@ -1,5 +1,7 @@
 from sqlalchemy import Column, Integer, String, Float, Boolean, ForeignKey
 from sqlalchemy.orm import relationship
+from sqlalchemy import delete
+from unicodedata import category
 
 from app import  db, app
 
@@ -18,7 +20,7 @@ class Product(db.Model):
     category_id=Column(Integer, ForeignKey(Category.id), nullable=False)
 if __name__=='__main__':
     with app.app_context():
-        db.create_all()
+        #db.create_all()
         #c1 =Category(name="Laptop")
         #c2 = Category(name="Mobile")
         #c3 = Category(name="Tablet") # Mỗi đối tượng là một hàng của bảng
@@ -79,7 +81,8 @@ if __name__=='__main__':
             "image":"https://res.cloudinary.com/dxxwcby8l/image/upload/v1647248722/r8sjly3st7estapvj19u.jpg",
             "category_id": 1
         }]
-        for p in products:
-            prod= Product(**p)
-            db.session.add(prod)
+        delete(Category)
+        #for p in products:
+           # prod= Product(**p)
+            #db.session.add(prod)
         db.session.commit()
