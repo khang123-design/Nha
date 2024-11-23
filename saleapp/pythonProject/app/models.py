@@ -20,12 +20,12 @@ class Product(db.Model):
     category_id=Column(Integer, ForeignKey(Category.id), nullable=False)
 if __name__=='__main__':
     with app.app_context():
-        #db.create_all()
-        #c1 =Category(name="Laptop")
-        #c2 = Category(name="Mobile")
-        #c3 = Category(name="Tablet") # Mỗi đối tượng là một hàng của bảng
-        #db.session.add_all([c1,c2,c3])
-        #db.session.commit()
+        db.create_all()
+        # c1 =Category(name="Laptop")
+        # c2 = Category(name="Mobile")
+        # c3 = Category(name="Tablet") # Mỗi đối tượng là một hàng của bảng
+        # db.session.add_all([c1,c2,c3])
+        # db.session.commit()
         products = [{
             "name": "iPhone 7 Plus",
             "description": "Apple, 32GB, RAM: 3GB, iOS13",
@@ -45,6 +45,7 @@ if __name__=='__main__':
             "image":"https://res.cloudinary.com/dxxwcby8l/image/upload/v1647248722/r8sjly3st7estapvj19u.jpg",
             "category_id": 1
         }, {
+
             "name": "iPhone 7 Plus",
             "description": "Apple, 32GB, RAM: 3GB, iOS13",
             "price": 17000000,
@@ -81,8 +82,8 @@ if __name__=='__main__':
             "image":"https://res.cloudinary.com/dxxwcby8l/image/upload/v1647248722/r8sjly3st7estapvj19u.jpg",
             "category_id": 1
         }]
-        delete(Category)
-        #for p in products:
-           # prod= Product(**p)
-            #db.session.add(prod)
+        #delete(Category)
+        for p in products:
+           prod= Product(**p)
+           db.session.add(prod)
         db.session.commit()
